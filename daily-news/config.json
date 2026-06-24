@@ -1,0 +1,54 @@
+{
+  "sources": {
+    "kualansi": {
+      "name": "快兰斯财经直播",
+      "api_url": "http://m.fbecn.com/24h/news_fbe0406.json",
+      "encoding": "utf-8-sig",
+      "page_size": 20
+    },
+    "jin10": {
+      "name": "金十数据",
+      "url": "https://www.jin10.com/",
+      "use_for_daily_only": true
+    }
+  },
+  "ai": {
+    "model": "kimi-k2.6",
+    "base_url": "https://api.moonshot.cn/v1",
+    "api_key_env": "MOONSHOT_API_KEY",
+    "max_tokens": 8192,
+    "temperature": 1,
+    "timeout_seconds": 300
+  },
+  "keywords": {
+    "instant_alert": ["暴跌", "熔断", "加息", "降息", "降准", "战争", "黄金突破", "人民币暴涨", "人民币暴跌", "台海", "半导体禁令", "制裁", "紧急", "突发", "重大"],
+    "emergency_override": ["熔断", "战争", "台海"],
+    "noise_filter": ["减持", "行政处罚", "警示函", "监管函", "问询函", "股东大会", "回购计划"]
+  },
+  "holdings": {
+    "core": [
+      {"name": "国开债E", "code": "020591", "tags": ["债券"]},
+      {"name": "纳指100C", "code": "012752", "tags": ["美股", "半导体", "AI"]},
+      {"name": "沪深300增强C", "code": "001016", "tags": ["A股", "大盘"]},
+      {"name": "日本精选C", "code": "019449", "tags": ["日股", "日本央行"]},
+      {"name": "中证1000增强C", "code": "015868", "tags": ["A股", "中小盘"]},
+      {"name": "黄金C", "code": "018543", "tags": ["黄金", "贵金属", "避险"]},
+      {"name": "标普500C", "code": "019305", "tags": ["美股"]},
+      {"name": "通胀通缩C", "code": "015692", "tags": ["通胀", "大宗商品"]}
+    ],
+    "satellite": [
+      {"name": "有色金属ETF", "code": "516650", "tags": ["有色", "资源"]},
+      {"name": "电网设备ETF", "code": "159326", "tags": ["电网", "基建"]}
+    ],
+    "macro_focus": ["美联储", "人民币", "黄金", "半导体", "AI", "宏观政策", "地缘", "日本央行"]
+  },
+  "output": {
+    "raw_dir": "data/wiki/main/sources/news",
+    "state_file": "state.json"
+  },
+  "schedule": {
+    "poll_interval_minutes": 30,
+    "daily_time": "08:00",
+    "quiet_hours": {"start": "23:59", "end": "07:00"}
+  }
+}
