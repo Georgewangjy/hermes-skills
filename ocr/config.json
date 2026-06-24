@@ -1,0 +1,20 @@
+{
+  "api": {
+    "base_url": "https://maas-coding-api.cn-huabei-1.xf-yun.com/v2",
+    "model": "xopkimik26",
+    "api_key_env": "XUNFEI_MAAK_API_KEY",
+    "timeout_seconds": 120
+  },
+  "ocr": {
+    "max_image_size_mb": 10,
+    "supported_formats": ["png", "jpg", "jpeg", "bmp", "webp", "gif"],
+    "max_tokens": 4000,
+    "temperature": 0.1,
+    "max_image_dimension": 2048
+  },
+  "prompts": {
+    "default": "请识别图片中的所有文字内容，按原始结构整理为Markdown格式输出。要求：\n1. 保留原文的标题层级结构\n2. 表格内容用Markdown表格格式\n3. 列表内容用Markdown列表格式\n4. 数字、金额、日期等保持原样\n5. 不要添加原文中没有的内容",
+    "table_focus": "请识别图片中的表格数据，严格按Markdown表格格式输出。要求：\n1. 表头和表体对齐\n2. 数字保持原样，不四舍五入\n3. 合并单元格用空格或说明标注\n4. 如果有多张表格，分别输出",
+    "financial": "请识别图片中的金融/财务数据，整理为Markdown格式。要求：\n1. 财务数据用表格呈现\n2. 金额保留原始精度\n3. 百分比保留原始精度\n4. 标注数据来源和日期\n5. 关键指标加粗显示"
+  }
+}
