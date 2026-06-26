@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "updated": "2026-06-17",
+  "index": {
+    "沪深300": "000300",
+    "上证50": "000016",
+    "中证1000": "000852",
+    "创业板指": "399006",
+    "科创50": "000688"
+  },
+  "akshare_cache": {
+    "stock_updated": null,
+    "fund_updated": "2026-06-17T11:02:30.064070",
+    "stock_data_path": null,
+    "fund_data_path": "/Users/George/ai-trading-system/skills/quote-lookup/scripts/../knowledge_base/akshare_funds.csv",
+    "stock_last_attempt": "2026-06-17T11:12:09.422093"
+  }
+}
