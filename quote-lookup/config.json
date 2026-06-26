@@ -1,0 +1,27 @@
+{
+  "akshare_cache_ttl_hours": 24,
+  "batch_limit": 20,
+  "timeout_seconds": 3,
+  "fund_nav_source": "akshare",
+  "sources": {
+    "sina": {
+      "url": "https://hq.sinajs.cn/list=",
+      "referer": "https://finance.sina.com.cn",
+      "encoding": "gbk"
+    },
+    "tencent": {
+      "url": "https://qt.gtimg.cn/q=",
+      "encoding": "gbk"
+    },
+    "eastmoney_fund": {
+      "url": "http://fundgz.1234567.com.cn/js/{code}.js",
+      "encoding": "utf-8"
+    }
+  },
+  "rate_limit": {
+    "fund_request_interval": 0.5,
+    "retry_delays": [1, 2],
+    "source_cooldown_seconds": 600,
+    "source_fail_threshold": 5
+  }
+}
